@@ -1,0 +1,22 @@
+{
+  "name": "generate-my-numbers",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.2.1",
+    "prettier": "^1.8.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "prettier": "prettier --config ./.prettierrc --write ./src/**/*.*",
+    "prettier-watch": "onchange \"./src/**/*.*\" -- prettier --write {{changed}}",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p prettier-watch start-js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

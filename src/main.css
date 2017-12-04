@@ -1,3 +1,7 @@
+:root {
+  --blueish: #26536a;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,26 +9,30 @@ body {
   background-color: #fafafa;
   color: #111;
   min-height: 100vh;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 main {
   margin: 0;
-  padding: 5vw;
+  max-width: 100vw;
   box-sizing: border-box;
+  padding: 2em 1em;
   /*background-color: rgb(237,214,197);*/
   display: grid;
-  grid-template: repeat(4, 1fr) 3fr / 1fr 2fr;
-  grid-gap: 5vw;
+  grid-template: repeat(2, 5em) 3.5em 1fr / repeat(6, 1fr);
+  grid-gap: 0.6em 0.4em;
 }
 
 .button-text {
-  border: 1px solid #555;
-  color: #1b4357;
+  border: 1px solid var(--blueish);
+  color: var(--blueish);
   text-transform: uppercase;
   font-size: 1.3em;
   padding: 0.4em 0.6em;
   font-weight: bold;
+  border-radius: 0.2em;
+  box-shadow: 2px 2px 10px rgba(27, 67, 87, 0.3);
+  height: 2.5em;
 }
 
 .button-text:focus {
@@ -32,13 +40,60 @@ main {
 }
 
 .button-container {
-  grid-area: 1 / -1 / 1 / 1;
+  grid-area: 1 / 1 / 1 / -1;
   /*background-color: blue;*/
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 p {
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-label {
+  /*justify-content: flex-end;*/
+}
+
+input[type='number'] {
+  font-size: 1em;
+  padding: 0.2em;
+  width: 100%;
+  /*width: 3em;*/
+  text-align: right;
+}
+
+.number-trouble {
+  border: 2px solid red;
+}
+
+.numbers-label {
+  grid-area: 3 / 1 / 4 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--blueish);
+  color: var(--blueish);
+}
+
+.numbers {
+  grid-area: 4 / 1 / -1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.6em;
+  padding: 0;
+  list-style-type: none;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.numbers li {
+  padding: 0.2em 0.5em 0.6em 0.5em;
 }
